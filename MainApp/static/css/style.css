@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+
+body {
+    font-family: 'Noto Serif', serif;
+    height: 100%;
+}
+
+.header {
+    background-color: #150D0B;
+    padding-top: 1rem;
+}
+
+.header h1,
+h2,
+p {
+    color: white;
+}
+
+#navbar {
+    background-color: #150D0B;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+
+}
+
+.navbar-toggler-icon {
+    background-color: #fff;
+} 
+
+.navbar-nav .nav-link {
+    color: #fff;
+} 
+
+.navbar-nav .nav-link.active {
+    color: #FF4646;
+} 
+
+#navbar a {
+    color: white;
+    font-size: 24px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+}
+
+#navbar a:active,
+a:hover {
+    color: #FF4646 !important;
+    font-size: 24px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+}
+
+#content {
+    background: url('./bg.png ') no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+    position: relative;
+    height: 810px;
+    min-height: fit-content;
+
+    
+}
+
+
+#content div {
+    position: relative;
+    width: 50%;
+    height: 50%;
+    top: 36%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.assortiment {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+#assortiment-title {
+    background-color: #150D0B;
+    color: white;
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+}
+
+.link_travertin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #000;
+    width: 378px;
+    height: 172px;
+    border-radius: 80px;
+    text-decoration: none;
+}
+

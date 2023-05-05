@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+{% extends "base.html" %}
+
+
+
+<head>
+  {% block title %}<title>{{ title }}</title>{% endblock title %}
+</head>
+
+<body>
+  {% block content %}
+  <div class="container-fluid" id="content" >
+    <div class="row">
+      <div class="content-text" style="padding-bottom:5rem;">
+        <p class="h4">Травертин в Астане по оптовым ценам</p>
+        <hr id="hr_line">
+        <p>от одного из крупнейших поставщиков в Казахстане<br>
+        Гранит, травертин, мрамор, балясины, колонны <br>
+      Большой ассортимент, доставка по городу</p>
+      <hr>
+      <div class="row" style="width: 100%;">
+        <div class="col col-xs-6 col-sm-6 text-center">
+          <i class="fa fa-truck fa-2xl"></i>
+          <p style="padding-top: 1rem; width:auto">доставка</p>
+        </div>
+        
+        <div class="col col-xs-6 col-sm-6 text-center">
+          <i class="fa fa-warehouse fa-2xl"></i>
+          <p class="h6" style="padding-top: 1rem; width:auto">склад в Астане</p>
+        </div>
+      </div>
+      </div>
+
+  </div>
+  {% endblock content %}
+
+  {% block about_us %}
+  <div class="container-fluid" style="background-color: #150D0B; color:#fff; padding-top:3rem; padding-bottom:3rem; text-align:center; font-size:larger" id="about_us_container">
+    <div class="row">
+      <h2 style="padding-bottom:2rem;" id="about_us">О нас</h2>
+      <div class="col-12" style="text-align: justify;">
+        <p style="text-indent: 2rem;">Наша компания занимается продажей и поставкой мрамора, гранита и травертина в Астане, Казахстан. Мы предлагаем <span style="color:red">широкий ассортимент продукции</span>, включая оптовые объемы, и гарантируем высокое качество каждого камня.</p>
+        <p style="text-indent: 2rem;">Одним из наших преимуществ является наличие собственных складских мощностей, что позволяет нам быстро и эффективно удовлетворять потребности наших клиентов. Мы также предлагаем <span style="color:red">бесплатную доставку по городу</span>, чтобы сделать процесс покупки еще более удобным для вас.</p>
+        <p style="text-indent: 2rem;">Мы гордимся тем, что наша компания является одной из лучших в отрасли и всегда готовы предложить нашим клиентам наилучший сервис и качество продукции. С нами вы можете быть уверены в том, что <span style="color:red">ваш заказ будет выполнен профессионально и в срок</span>.</p>
+        <p style="text-indent: 2rem;">Наша команда профессионалов всегда готова проконсультировать вас и помочь в выборе наиболее подходящего для вас камня. Мы стремимся к тому, чтобы наши клиенты получили от нашей работы только положительные эмоции и впечатления.</p>
+      </div>
+    </div>
+  </div>
+  
+  {% endblock about_us %}
+
+  {% block assortiment %}
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12" id="assortiment-title" style="padding-top: 3rem; padding-bottom: 3rem;">
+        <h1>Наша продукция</h1>
+      </div>
+      <div class="container-fluid" id="assort">
+        <div class="row" id="assort_row">
+          <div class="col-4 col-xs-12 col-sm-12 col-lg-4" style="background: url(./static/images/traver_index.png);">
+            <a href="travertin " class="link_text">Травертин</a>
+          </div>
+
+          <div class="col-4 col-xs-12 col-sm-12 col-lg-4" style="background: url(./static/images/mramor_index.png);"><a href="mramor" class="link_text">Мрамор</a></div>
+
+
+          <div class="col-4 col-xs-12 col-sm-12 col-lg-4" style="background: url(./static/images/granit_index.png);">
+            <a href="stone" class="link_text">Гранит</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock assortiment %}
+
+    {% block prefooter %}
+    <section class="whywe">
+      <div class="container-fluid" style="background-color: black; padding-top:3rem; padding-bottom:3rem;">
+        <h3 style="color:white; text-align:center; font-size:3rem;">Почему мы?</h3>
+      </div>
+    </section>
+
+
+    <div class="container-fluid" style="
+                                text-align: center; 
+                                background-color:black; 
+                                color:white;
+                                padding-top:1rem;
+                                padding-bottom:10%;
+                                ">
+      <div class="row" style="padding-top: 2rem;">
+        <div class="col">Цены без посредников </div>
+        <div class="col">Заводское качество и шлифовка</div>
+      </div>
+      <div class="row" style="padding-top:5%;">
+        <div class="col">Заводское качество и шлифовка</div>
+        <div class="col">Бесплатная доставка по городу</div>
+      </div>
+    </div>
+    {% endblock prefooter %}
+
+
+    {% block form %}    
+    <div style="padding-bottom: 2rem;">
+      <h1 class="text-center pb-4 bg-dark text-white pt-5 form-h1" id="form-h1">Сделать запрос</h1>
+      <form method="post" class="mx-auto" style="max-width:500px;">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+          {{ form.name }}
+        </div>
+        <div class="form-group">
+          <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+          {{ form.email }}
+        </div>
+        <div class="form-group">
+          <label for="{{ form.phone_number.id_for_label }}">{{ form.phone_number.label }}</label>
+          {{ form.phone_number }}
+        </div>
+        <div class="form-group">
+          <label for="{{ form.message.id_for_label }}">{{ form.text_box.label }}</label>
+          {{ form.text_box }}
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-danger">Сделать запрос</button>
+        </div>
+      </form>
+    </div> 
+{% endblock form %}
+
+</body>
+</html>

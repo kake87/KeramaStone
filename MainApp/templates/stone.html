@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block title %}<title>{{ title }}</title>{% endblock title %}
+<link rel="stylesheet" href="/static/css/style.css">
+
+
+{{ title }}
+{% block content %}
+<h2 class="display-2" style="background-color:#150D0B;color:#fff; text-align:center; padding-top:20px; padding-bottom:20px;margin-bottom: 0px;
+border-bottom-width: 0px;">Гранит</h2>
+<div class="row" style="background-color:#150D0B">
+  {% for product in products %}
+  <div class="col-md-4" style="padding-top: 20px; background-color: #150D0B">
+    <div class="card mb-4">
+      <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
+      <div class="card-body" style="background-color: #150D0B; color:#fff">
+        <h5 class="card-title"style="background-color: #150D0B; color:#F5B041">{{ product.name }}</h5>
+        <p class="card-text" style="background-color: #150D0B; color:#fff; text-align:justify; text-indent:1rem;">{{ product.description }}</p><hr>
+        {% if product.is_available %}
+        <p class="h5" style="color: #52BE80;"><i class="fa-solid fa-check" style="color: #52BE80;"></i> В наличии</p>
+      {% elif product.order_only %}
+          <p class="h5" style="color:#E74C3C"><i class="fa-solid fa-truck" style="color: #E74C3C;"></i> Под заказ</p>
+      {% endif %}
+
+        <p class="card-text" style="background-color: #150D0B; color:#fff"><strong style="font-size: larger;">{{ product.price }} тенге/м2.</strong></p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="container-fluid p-5" style="background-color: #150D0B; color: #fff;">
+  <div class="row">
+    <div class="col-md-12 granit_col">
+      <h4 class="display-4">O граните</h4>
+      <p>Гранит - это идеальный материал для <span style="color:red">создания элегантных и прочных поверхностей</span> в вашем доме. Он не только выглядит великолепно, но и обладает высокой устойчивостью к износу и повреждениям. Независимо от того, нужен ли вам гранит для кухонных столов, ванных комнат или для отделки полов и стен, он всегда будет отличным выбором.</p>
+      <p>Гранит - это натуральный камень, который <span style="color:red">прекрасно сочетается с различными интерьерами и стилями</span>, от современного до классического. Он доступен в широком диапазоне цветов, от светлых до темных, что позволяет выбрать подходящий вариант для любого дизайна.</p>
+      <p>Кроме того, гранит - это один из самых долговечных материалов, который <span style="color:red">стойкий к царапинам, пятнам и температурным изменениям</span>, что делает его идеальным для использования в кухонях и ванных комнатах.</p>
+      <p>Если вы хотите добавить элегантности и прочности в свой дом, то гранит - это идеальный выбор. Он <span style="color:red">приобретайте гранит прямо сейчас</span> и наслаждайтесь его красотой и надежностью в течение многих лет.</p>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid p-3 p-md-5" style="background-color: #150D0B; color:#fff">
+  <div class="row">
+    <h4 class="display-4" style="text-align: center; padding-top:1rem; padding-bottom:1rem">Наш цех</h4>
+    <div class="col-12 col-md-6">
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="/static/images/Cutter/1.jpg" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="/static/images/Cutter/2.jpg" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="/static/images/Cutter/3.jpg" alt="Third slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev" style="color:#150D0B;">
+          <span class="carousel-control-prev-icon" aria-hidden="true" ></span>
+          <span class="sr-only" style="color: #150D0B;">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true" style="color: #150D0B;"></span>
+          <span class="sr-only" style="color: #150D0B;">Next</span>
+        </a>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 tsekh" style="background-color: #150D0B; color:#fff; text-align:left;">
+      <p style="font-size: 1.2rem;">Наш цех по резке и шлифованию камня предлагает широкий спектр услуг для наших клиентов. Мы специализируемся на обработке мрамора и камня любых видов и размеров.</p>
+      <p style="font-size: 1.2rem;">Наша команда профессионалов обеспечивает высокое качество обработки камня, используя самое современное оборудование и технологии. Мы можем резать и шлифовать камень в любых формах и размерах, чтобы соответствовать вашим потребностям.</p>
+      <p style="font-size: 1.2rem;">Независимо от того, нужен вам камень для строительства или для декоративных целей, мы готовы предоставить вам высококачественную обработку камня. Наши услуги резки и шлифовки камня являются надежными и доступными для всех наших клиентов.</p>
+      <p style="font-size: 1.2rem;">Обратившись к нам, вы можете быть уверены, что ваш камень будет обработан профессионалами с большим опытом работы в этой области. Мы гарантируем высокое качество услуг и быстрые сроки выполнения заказов.</p>
+      <p style="font-size: 1.2rem;">Свяжитесь с нами сегодня, чтобы узнать больше о наших услугах резки и шлифовки камня. Мы готовы помочь вам достичь ваших целей и воплотить в жизнь любые ваши идеи.</p>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+<script>
+  $('.carousel').carousel();
+</script>
+```
