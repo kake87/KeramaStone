@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-pyposh@lfl73(30ax(9fk+!=wyp(dxmojn!j!+78rwd&76p!&p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1',]
+ALLOWED_HOSTS = ['185.4.180.100', 'travertine.kz', '127.0.0.1']
 
 
 # Application definition
